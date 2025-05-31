@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Us - FabNails.Inc</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="contactuspage.css" />
+    <link rel="stylesheet" href="shop.css" />
+  </head>
+
+  <body>
+    <header>
+      <div id="left-container"></div>
+
+      <div id="center-container">
+        <h1 id="title" onclick="window.location.href='mypage.html'">
+          FabNails.Inc
+        </h1>
+      </div>
+
+      <div id="right-container">
+        <!---------------------Search bar------------------>
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." />
+        </div>
+
+        <!---------------------Login button ------------------->
+        <button class="login-btn">Login</button>
+
+        <!-------------------Cart button with count-------------->
+        <button class="cart-btn">
+          Cart
+          <span class="cart-count">0</span>
+          <!-- future-think = to play with count as we learn more -->
+        </button>
+      </div>
+    </header>
+
+    <nav id="nav-bar">
+      <ul>
+        <li class="btn nav-link"><a href="home.html">Home</a></li>
+        <li class="btn nav-link"><a href="shop.html">Shop</a></li>
+        <li class="btn nav-link"><a href="offers">Offers</a></li>
+        <li class="btn nav-link"><a href="catalo">Catalogue</a></li>
+        <li class="btn nav-link"><a href="blog">Blog</a></li>
+      </ul>
+      <!-- ul by default display bullets; assign list-style in css -->
+    </nav>
+
+    <hr />
+    <!------------------styled visual horizontal line----------------------->
+
+    <main>
+      <section id="contact-container">
+        <h4>Got a Question? We got you!</h4>
+        <fieldset>
+          <legend>Contact Form</legend>
+          <!-- legend tag is like a header tag but will insert into a border -->
+          <form action="mailto:estellet@missionreadyhq.com" method="post">
+            <!-- NAME FIELD -->
+            <label>Name:</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Please enter you name..."
+              required
+            />
+
+            <!-- EMAIL FIELD -->
+            <label>Email:</label
+            ><input
+              type="email"
+              name="email"
+              placeholder="Please enter your email..."
+              required
+            />
+
+            <!-- MESSAGE TEXT AREA -->
+            <label>Message:</label>
+            <textarea
+              id="message-box"
+              placeholder="type your message here..."
+              required
+            ></textarea>
+
+            <!-- SUBMIT BUTTON -->
+            <input type="submit" value="Send" id="send-button" />
+          </form>
+        </fieldset>
+      </section>
+    </main>
+
+    <hr />
+    <!-------------------styled visual line------------------------>
+
+    <footer>
+      <p>© Copyright 2025 Estelle Tolmay. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

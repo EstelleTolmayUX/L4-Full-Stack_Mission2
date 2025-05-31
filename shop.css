@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.product-carousel-container {
+    text-align: center;
+}
+
+.selected-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.arrow {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    background-color: #555;
+}
+
+#selected-image {
+    width: 300px;
+    height: auto;
+    margin: 0 20px;
+    border: 2px solid #ccc;
+}
+
+#image-name {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    object-fit: cover;
+}
+
+.thumbnail:hover {
+    border-color: #333;
+}
