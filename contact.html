@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Contact Us - FabNails.Inc</title>
+
+    <link rel="stylesheet" href="global.css" />
     <link rel="stylesheet" href="home.css" />
     <link rel="stylesheet" href="contactuspage.css" />
     <link rel="stylesheet" href="shop.css" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script defer src="script.js"></script>
   </head>
 
   <body>
@@ -21,14 +29,15 @@
           <input type="text" placeholder="Search..." />
         </div>
 
-        <!---------------------Login button ------------------->
-        <button class="login-btn">Login</button>
+        <!-- Login icon (user) -->
+        <button class="login-btn" title="Login">
+          <i class="fas fa-user"></i>
+        </button>
 
-        <!-------------------Cart button with count-------------->
-        <button class="cart-btn">
-          Cart
+        <!-- Cart icon with badge -->
+        <button class="cart-btn" title="Cart">
+          <i class="fas fa-shopping-cart"></i>
           <span class="cart-count">0</span>
-          <!-- future-think = to play with count as we learn more -->
         </button>
       </div>
     </header>
