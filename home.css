@@ -2,110 +2,18 @@
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    font-family: Helvetica, Arial, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f0f0;
-}
 
-/* -----------------------style the header -------------------*/
-header {
-    background-color: rgb(244, 243, 245);
-    padding: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* -------------------------style the title of my page---------- */
-#title {
-    color: #3f3136;
-}
-
-/* --------------------change to hand pointer ------------------*/
-#title:hover {
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* ---------------------style left-container --------------------*/
-#header-left-container {
-    display: flex;
-    width: 25%;
-    background-color: #ff8da1;
-}
-
-/* ------------------------style the center container----------------- */
-#header-center-container {
-    display: flex;
-    text-align: center;
-    background-color: #ff8da1;
-}
-
-/* --------------style the right-container (search, login, cart)--------*/
-#header-right-container {
-    display: flex;
-    justify-content: flex-end;
-    width: 25%;
-    align-items: center;
-    gap: 1rem;
-    background-color: #ff8da1;
-}
-
-nav>ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.btn {
-    padding: 10px 20px;
-    background-color: rgb(223, 214, 226);
-    border-radius: 5px;
-    box-shadow: 2px 2px 4px #000000;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /*smooth transition */
-}
-
-.btn:hover {
-    transform: scale(1.1);
-    /* enlage btn */
-    box-shadow: 0 0 15px rgba(139, 0, 139, 0.7);
-    /* Glowing shadow with a purple hue */
-    background-color: rgb(200, 190, 205);
-}
-
-nav>ul>li>a {
-    color: rgb(67, 70, 70);
-    text-decoration: none;
-}
-
-/*------------------------- style search, login, cart---------------------*/
-.search-bar {
-    box-shadow: 2px 2px 4px #000000;
-}
-
-.login-btn {
-    box-shadow: 2px 2px 4px #000000;
-}
-
-.cart-btn {
-    box-shadow: 2px 2px 4px #000000;
-    /* understanding box-shadow: fundamental: box-shadow: offset-x offset-y blur-radius color; */
-}
-
-/*------------------ style <main> content section of the page---------------*/
+/* -----------------------------------------------MAIN---------------------------------------------------------- */
+/*-style <main> content section of HOME page--*/
 main {
     display: flex;
     justify-content: space-evenly;
-    padding: 4rem;
-    /* 4xfontsize(16px) */
-    background-color: #a59090;
+    padding: 5rem;
+    /* 4x font-size(16px) */
+    background-color: #776258;
 }
 
-
-/* ------------------style the left-hero-container content -------------------*/
+/* ---------------------------------------------HERO CONTAINER ----------------------------------------*/
 #left-hero-section {
     display: flex;
     justify-content: center;
@@ -113,7 +21,7 @@ main {
 }
 
 #hero-text-box {
-    color: #3b3d38;
+    color: rgb(33, 23, 37);
     width: 45rem;
     /* 45xfontsize(16px) */
 
@@ -121,12 +29,11 @@ main {
 
 #offers-link {
     text-decoration: none;
-    color: #4b014b;
+    color: #ADB2D3;
     position: relative;
     /* Needed for pseudo-element positioning */
     transition: color .3s ease, transform 0.3s ease;
 }
-
 
 #offers-link::after {
     content: '';
@@ -143,7 +50,7 @@ main {
 
 #offers-link:hover {
     cursor: pointer;
-    color: #8b008b;
+    color: #2f1408;
 }
 
 #offers-link:hover::after {
@@ -152,53 +59,17 @@ main {
 }
 
 #hero-image {
-    border-radius: 5rem;
+    border-radius: 8px;
     /* Slight rounding */
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     animation: fadeIn 1.5s ease out forward;
     position: relative;
-    display: block;
     max-width: 100%;
     /* ensures responsiveness */
 }
 
 #hero-image:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(139, 0, 139, 0.6);
+    box-shadow: 0 0 20px #ADB2D3;
     /* slight zoom on hover  */
-
 }
-
-/*------------------------------- Footer styling ------------------------------------*/
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #3f3136;
-}
-
-footer a {
-    color: #3f3136;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #4b014b;
-    font-weight: 700;
-    transition: .5s;
-}
-
-/* Fade-in animation for page load */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.95)
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* -----------------------------------NEXT ...style submit button--------------------------- */
