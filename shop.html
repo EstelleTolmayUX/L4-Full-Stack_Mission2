@@ -3,40 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Shop</title>
 
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="shop.css" />
     <link rel="stylesheet" href="home.css" />
     <link rel="stylesheet" href="contactuspage.css" />
-    <link rel="stylesheet" href="shop.css" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <script defer src="script.js"></script>
-  </head>
-
-
+  </head>     
   <body>
-
-
     <header>
-      <div id="left-container"></div>
+      <div id="header-left-container">
+        <!-- -----------------placeholder for logo ------------------------------------------------------>
+    </div>
 
-      <div id="center-container">
-        <h1 id="title" onclick="window.location.href='home.html'">FabNails.Inc
-        </h1>
+    <div id="header-center-container">
+      <h1 id="title">FabNails.Inc</h1>
+    </div>
+
+<!-------------------------------------SEARCH LOGIN SHOPPING BAG------------------------------------------->
+    <div id="header-right-container">
+      <div class="search-bar">
+        <span class="material-icons">search</span>
+        <input type="text" placeholder="What are you looking for?" />
       </div>
 
-      <div id="right-container">
-        <!---------------------Search bar------------------>
-        <div class="search-bar">
-          <input type="text" placeholder="Search..." />
-        </div>
-        <!---------------------Login button ------------------->
-        <button class="login-btn">Login</button>
-        <!-------------------Cart button with count-------------->
-        <button class="cart-btn">
-          Cart
-          <span class="cart-count">0</span>
-          <!-- future-think = to play with count as we learn more -->
-        </button>
-      </div>
+      <button class="login-btn" title="Login">
+        <span class="material-icons">person</span>
+      </button>
+
+      <button class="shopping-bag-btn" title="shopping-bag">
+        <span class="material-icons">shopping_bag</span>
+        <span class="shopping-bag-count">0</span>
+      </button>
+    </div>
     </header>
 
 <!-- ------------------------------------------------NAV BAR  ---------------------------------------------------------->
