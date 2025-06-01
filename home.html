@@ -5,46 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Homepage</title>
+    <link rel="stylesheet" href="global.css" />
     <link rel="stylesheet" href="home.css" />
     <link rel="stylesheet" href="contactuspage.css" />
     <link rel="stylesheet" href="shop.css" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script defer src="script.js"></script>
   </head>
 
-  <body>
-    <header>
-      <div id="header-left-container">
-        <!-- -----------------placeholder for logo ----------------------->
+<body>
+
+  <header>
+    <div id="header-left-container">
+        <!-- -----------------placeholder for logo ------------------------------------------------------>
+    </div>
+
+    <div id="header-center-container">
+      <h1 id="title">FabNails.Inc</h1>
+    </div>
+
+<!-------------------------------------SEARCH LOGIN SHOPPING BAG------------------------------------------->
+    <div id="header-right-container">
+      <div class="search-bar">
+        <span class="material-icons">search</span>
+        <input type="text" placeholder="What are you looking for?" />
       </div>
 
-      <div id="header-center-container">
-        <h1 id="title">FabNails.Inc</h1>
-      </div>
+      <button class="login-btn" title="Login">
+        <span class="material-icons">person</span>
+      </button>
 
-      <div id="header-right-container">
-        <!-- ---------------------Search bar------------------------------->
-        <div class="search-bar">
-          <input type="text" placeholder="Search..." />
-        </div>
+      <button class="shopping-bag-btn" title="shopping-bag">
+        <span class="material-icons">shopping_bag</span>
+        <span class="shopping-bag-count">0</span>
+      </button>
+    </div>
 
-        <!---------------------- Login button------------------------------- -->
-        <button class="login-btn">Login</button>
+  </header>
 
-        <!------------------ Cart button with count ---------------------------->
-        <button class="cart-btn">Cart<span class="cart-count">0</span></button>
-      </div>
-    </header>
-
-     <!-- -------ul by default display bullets; assign list-style in css---------------- -->
+<!-------------------------------------HOME NAV BUTTONS---------------------------------------------------------->
     <nav id="nav-bar">
       <ul>
         <li class="btn nav-link"><a href="shop.html">Shop</a></li>
         <li class="btn nav-link"><a href="new">New</a></li>
         <li class="btn nav-link"><a href="services">Services</a></li>
         <li class="btn nav-link"><a href="blog">Blog</a></li>
-      </ul>
+      </ul><!---ul by default display bullets; assign list-style in css--->
     </nav>
-<!-- --------------------------------------------------------------------------------------------------->
+<!-- -----------------------------------HOME-MAIN SECTION ------------------------------------------------------->
     <main>
       <section id="left-hero-section">
         <div id="hero-text-box">
@@ -59,47 +68,36 @@
             just polish, it's perfection. Treat yourself or a loved one to the
             beauty of stunning nails today!
           </p>
+
           <br />
 
           <h2>Exclusive Seasonal Offers</h2>
-          <!-------------------------- link on mouse click ---------------------------------->
-          <p>
-            Warm up your winter with our
-            <a
-              id="offers-link"
-              href="https://www.opi.com/collections/bestsellers"
-              target="_blank"
-              >exclusive seasonal offers on NOW!
-            </a>
-            <br>
-            <br>
-            Dive into frosty nail polishes and cozy nail art designs at
+          <p>Dive into frosty nail polishes and cozy nail art designs at
             unbeatable prices. Grab these limited-time deals and let your nails
             shine all season long!
           </p>
+ 
+          <h4><a
+              id="offers-link"
+              href="https://www.opi.com/collections/bestsellers"
+              target="_blank"
+              >Warm up your winter with our exclusive seasonal offers on NOW!
+          </h4></a><!--link on mouse click -->
         </div>
       </section>
 
-      <!-------------------------- right-hero-container----------------------------------------------------------------->
+      <!-------------------------- RIGHT SECTION OF HERO CONTAINER----------------------------------------------------------------->
       <section id="right-hero-section">
         <img
           id="hero-image"
-          src="./Images/opi_home_image_1.jpg"
-        />
-       
+          src="./Images/hero_image_homepage.jpeg"/>
+      </section>
     </main>
- <div>
-      <section> 
-      
-      <h1>New Section</h1>
-      
-     </section>
-    </div>
-    <hr />
-    <!--------------------------------horizontal line----------------------------------------------------------------
-    <-------------------------Email Contact Form LINK in footer------------------------------------------------>
+    
+    <hr /> <!--horizontal line-->
+   
     <footer>
-      <p><a href="contact.html">Contact Us</a></p>
+      <p><a href="contact.html">Contact Us</a></p> <!--Email Contact Form LINK in footer-->
       <p>© Copyright 2025 Estelle Tolmay. All rights reserved.</p>
     </footer>
   </body>
