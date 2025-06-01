@@ -1,12 +1,13 @@
-console.log("It's Mission 2 Time");
+console.log("🚀It's Mission 2 Time");
 
+// ---------------- -----------------🎠Product Carousel / Gallery  -------------------------------------------------------->
 const images = [
   { src: "./Images/shes-a-bad-muffuletta.jpeg", name: "She's a Bad Muffuletta!" },
   { src: "./Images/prideful_peach.jpeg", name: "Prideful Peach" },
   { src: "./Images/suzis_pedicure_throne.jpeg", name: "Suzi's Pedicure Throne" },
   { src: "./Images/vogue_en_violet.jpeg", name: "Vogue en Violet" },
   { src: "./Images/indigo_off.jpeg", name: "Indigo off" },
-  { src: "./Images/glitter.jpeg", name: "Glitter" },
+  { src: "./Images/glitter.jpeg", name: "gLITter" },
 ];
 
 let currentIndex = 0;
@@ -28,10 +29,10 @@ function updateGallery() {
 }
 
 // to change current index to the next one
-// if at end of gallery, start from begining again
+// if at end of gallery, start from beginning again
 // call update gallery
-//array has a length of 10
-//last valid image is at 9
+//array has a length of 6
+//last valid image is at 5
 function nextImage() {
   currentIndex++;
   if (currentIndex === images.length) {
@@ -40,29 +41,118 @@ function nextImage() {
   updateGallery();
 }
 
-// to change current index to the prevous one
-// if at begining of gallery, change to end
-// call update gallery
+// to change current index to the previous one
+// if at beginning of gallery, change to end
+
 function prevImage() {
   currentIndex--;
   if (currentIndex < 0) {
     currentIndex = images.length - 1;
   }
-
-  updateGallery();
+  updateGallery(); // call update gallery
 }
 
 // change current index to selected thumbnail index
-// call updateGallery
 function selectThumbnail(index) {
   console.log("thumbnail btn selected", currentIndex);
   currentIndex = index;
-  updateGallery();
+  updateGallery(); // call updateGallery
 }
 
 // add functions to elements by adding event listeners or directly in the html
 leftArrow.addEventListener("click", prevImage);
 rightArrow.addEventListener("click", nextImage);
-thumbnails.forEach((thumbnail) => {
+thumbnails.forEach((thumbnail, index) => {
   thumbnail.addEventListener("click", () => selectThumbnail(index));
 });
+
+// ------------------------------------💅Build PRODUCT GRID SECTION---------------------------------
+//1. I'm using array of objects for products:
+const nailProducts = [
+  {
+    name: "She's a Bad Muffuletta!",
+    price: 16.99,
+    image: "./Images/shes-a-bad-muffuletta.jpeg",
+    description: "Spicy red with a glossy finish",
+  },
+
+  {
+    name: "Prideful Peach",
+    price: 11.49,
+    image: "./Images/prideful_peach.jpeg",
+    description: "Soft peachy nude for everyday glow.",
+  },
+
+  {
+    name: "Suzi's Pedicure Throne",
+    price: 13.99,
+    image: "./Images/suzis_pedicure_throne.jpeg",
+    description: "Royal purple shimmer for bold style.",
+  },
+
+  {
+    name: "Vogue en Violet",
+    price: 11.49,
+    image: "./Images/vogue_en_violet.jpeg",
+    description: "Elegant violet for classy nights.",
+  },
+
+  {
+    name: "Indigo Off",
+    price: 16.99,
+    image: "./Images/indigo_off.jpeg",
+    description: "Deep indigo that dries fast and smooth.",
+  },
+
+  {
+    name: "gLITter",
+    price: 11.49,
+    image: "./Images/glitter.jpeg",
+    description: "Soft peachy nude for everyday glow.",
+  },
+];
+console.log("Product Array ready (confirms data is loaded):", nailProducts);
+
+//2.------------- Render Grid Section from Array of Objects (products)-------------------
+const productGrid = document.getElementById("productGrid");
+console.log("Got productGrid container (target div):", productGrid);
+
+//----------------------------Function to render the products-------------------------------
+// function renderProducts() {console.log("starting to render my product cards:")
+// renderProducts();}
+
+//3. Loop over each product and insert/ build into HTML = .innerHTML
+// Loop over each product and insert += each product card after whats already there as raw HTML inside the grid
+// for each product (loop) in nailProducts array, using arrow function, log its name and i; index = srt @ 0
+nailProducts.forEach((product, index) => {
+  console.log(`Rendering product ${index + 1}:`, product);
+
+  productGrid.innerHTML += `
+  <div class="product-card">
+  <img src="${product.image}" alt="${product.name}" />
+  <h3 class="product-name">${product.name}</h3>
+  <p class="price">$${product.price.toFixed(2)}</p>
+  <button class="add-to-cart-btn" data-index="${index}">Add to Cart</button>
+  </div>`;
+});
+
+//4. add event listeners to all "add-to-cart-btn"
+console.log("Start looking for all the add-to-cart-btns");
+
+// setTimeout if btns r not created in time 💬 Wait until after the browser has finished adding all the buttons, then run this part.
+setTimeout(() => {
+  // select all btns with class "add-to-cart-btn"
+  const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+  console.log("Found buttons", addToCartButtons.length);
+
+  // Loop through each button
+  addToCartButtons.forEach((button, index) => {
+    console.log(`setting up listener for product index ${index}`);
+
+    //👂🖱️Add a click event listener to ea btn
+    button.addEventListener("click", () => {
+      console.log(`🛒add to cart clicked for from array of products: ${nailProducts[index].name}`);
+      //💡this is where you will later add cart logic!
+    });
+  });
+}, 0);

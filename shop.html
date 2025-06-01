@@ -4,21 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <!-- for global styles -->
+
     <link rel="stylesheet" href="home.css" />
     <link rel="stylesheet" href="contactuspage.css" />
     <link rel="stylesheet" href="shop.css" />
     <script defer src="script.js"></script>
   </head>
 
+
   <body>
+
+
     <header>
       <div id="left-container"></div>
 
       <div id="center-container">
-        <h1 id="title" onclick="window.location.href='home.html'">
-          FabNails.Inc
+        <h1 id="title" onclick="window.location.href='home.html'">FabNails.Inc
         </h1>
       </div>
 
@@ -37,21 +38,25 @@
         </button>
       </div>
     </header>
+
+<!-- ------------------------------------------------NAV BAR  ---------------------------------------------------------->
 <div>
     <nav id="nav-bar">
       <ul>
         <li class="btn nav-link"><a href="home.html">Home</a></li>
         <li class="btn nav-link"><a href="shop.html">Shop All</a></li>
-        <li class="btn nav-link"><a href="offers">Offers</a></li>
-        <li class="btn nav-link"><a href="catalogue">Catalogue</a></li>
+        <li class="btn nav-link"><a href="new">New</a></li>
+        <li class="btn nav-link"><a href="services">Services</a></li>
         <li class="btn nav-link"><a href="blog">Blog</a></li>
       </ul>
       <!-- ul by default display bullets; assign list-style in css -->
     </nav>
   </div>
-    <!---------------------- Product Carousel / Gallery  -------------------------------------------------------->
+
+
+    <!---------------------- -----------------🎠Product Carousel / Gallery  -------------------------------------------------------->
     <div class="product-carousel-container">
-      <h1>Product Gallery</h1>
+      <h1>New For You</h1>
       <div class="selected-image-container">
         <button class="arrow" id="left-arrow">&lt;</button>
         <img
@@ -60,10 +65,10 @@
           alt="selected nail polish"
         />
         <button class="arrow" id="right-arrow">&gt;</button>
-        <!-- they are literal symbols representing nav arrows; best practice use &lt; and &gt; to avoid potential rendering issues. -->
+        <!-- &lt &gt are literal symbols representing nav arrows; best practice use &lt; and &gt; to avoid potential rendering issues. -->
       </div>
 
-      <p id="image-name">Our Top Sellers</p>
+      <p id="image-name">She's a Bad Muffuletta!</p>
       <div class="thumbnail-container">
         <img
           class="thumbnail"
@@ -93,7 +98,28 @@
         <img 
         class="thumbnail" 
         src="./Images/glitter.jpeg" 
-        alt="OPI image 6"/>
+        alt="OPI image 6_gLITter"/>
     </div>
+<hr>
+
+
+<!----------------------------------PRODUCT GRID SECTION------------------------------------------------------ -->
+<section class="product-grid-section">
+  <h2>Buy From What's New</h2>
+<div class="product-grid" id="productGrid"></div><!-- store productGrid in JS / .getElementbyId  -->
+</section>   
+    
+    
+    <hr />
+    <!--------------------------------horizontal line----------------------------------------------------------------
+   
+   
+    <-------------------------Email Contact Form LINK in footer------------------------------------------------>
+    <footer>
+      <p><a href="contact.html">Contact Us</a></p>
+
+
+      <p>© Copyright 2025 Estelle Tolmay. All rights reserved.</p>
+    </footer>
   </body>
 </html>

@@ -5,7 +5,7 @@
 body {
     margin: 0;
     font-family: Helvetica, Arial, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* background-color: rgb(255, 240, 247); */
+    background-color: #f0f0f0;
 }
 
 /* -----------------------style the header -------------------*/
@@ -20,8 +20,6 @@ header {
 /* -------------------------style the title of my page---------- */
 #title {
     color: #3f3136;
-
-
 }
 
 /* --------------------change to hand pointer ------------------*/
@@ -34,14 +32,14 @@ header {
 #header-left-container {
     display: flex;
     width: 25%;
-    /* background-color: #ff8da1; */
+    background-color: #ff8da1;
 }
 
 /* ------------------------style the center container----------------- */
 #header-center-container {
     display: flex;
     text-align: center;
-    /* background-color: #ff8da1; */
+    background-color: #ff8da1;
 }
 
 /* --------------style the right-container (search, login, cart)--------*/
@@ -51,7 +49,7 @@ header {
     width: 25%;
     align-items: center;
     gap: 1rem;
-    /* background-color: #ff8da1; */
+    background-color: #ff8da1;
 }
 
 nav>ul {
