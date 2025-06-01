@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    font-family: Helvetica, Arial, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: whitesmoke;
+    padding: 30px;
+}
+
+/* <!-------------------------------------SEARCH LOGIN SHOPPING BAG----------------------------------------------------------> */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 6px 10px;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/*Material icon inside search bar */
+.search-bar .material-icons {
+    font-size: 20px;
+    color: #555;
+}
+
+/* Input field reset & style */
+.search-bar input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: none;
+    color: #333;
+    width: 180px;
+}
+
+.login-btn {
+    border: none;
+    background: none;
+}
+
+.shopping-bag-btn {
+    border: none;
+    background: none;
+}
+
+/* -------------------------style the title of my page---------- */
+#title {
+    color: rgb(33, 23, 37);
+}
+
+/* -------------------------change to hand pointer ------------------*/
+#title:hover {
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.1s ease;
+}
+
+/* ---------------------style left-container --------------------*/
+#header-left-container {
+    display: flex;
+    width: 25%;
+}
+
+/* ------------------------style the center container----------------- */
+#header-center-container {
+    display: flex;
+    text-align: center;
+}
+
+/* --------------style the right-container (search, login, cart)--------*/
+#header-right-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 25%;
+    align-items: center;
+    gap: 1rem;
+}
+
+.material-icons {
+    font-size: 24px;
+    color: rgb(83, 74, 74);
+}
+
+nav>ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #eee6e2;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px #594f3b;
+    /*box-shadow: fundamentals _ offset-x offset-y blur-radius color; */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /*smooth transition*/
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    /* enlarge btn */
+    box-shadow: 0 0 15px #896279;
+    /* Glowing shadow*/
+    background-color: rgb(#594F3B);
+}
+
+nav>ul>li>a {
+    color: rgb(33, 23, 37);
+    text-decoration: none;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3f3136;
+}
+
+footer a {
+    color: #3f3136;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #4b014b;
+    font-weight: 700;
+    transition: .5s;
+}
+
+/* Fade-in animation for page load
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95)
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+} */
