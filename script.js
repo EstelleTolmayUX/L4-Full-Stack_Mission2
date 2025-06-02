@@ -1,6 +1,6 @@
 console.log("🚀It's Mission 2 Time");
 
-// ---------------- -----------------🎠Product Carousel / Gallery  -------------------------------------------------------->
+// ---------------- -----------------🎠BUILD PRODUCT CAROUSEL-------------------------------------------------------->
 const images = [
   { src: "./Images/shes-a-bad-muffuletta.jpeg", name: "She's a Bad Muffuletta!" },
   { src: "./Images/prideful_peach.jpeg", name: "Prideful Peach" },
@@ -30,7 +30,6 @@ function updateGallery() {
 
 // to change current index to the next one
 // if at end of gallery, start from beginning again
-// call update gallery
 //array has a length of 6
 //last valid image is at 5
 function nextImage() {
@@ -38,12 +37,11 @@ function nextImage() {
   if (currentIndex === images.length) {
     currentIndex = 0;
   }
-  updateGallery();
+  updateGallery(); // call update gallery
 }
 
 // to change current index to the previous one
-// if at beginning of gallery, change to end
-
+// if at beginning of gallery, THEN change to end
 function prevImage() {
   currentIndex--;
   if (currentIndex < 0) {
@@ -66,7 +64,7 @@ thumbnails.forEach((thumbnail, index) => {
   thumbnail.addEventListener("click", () => selectThumbnail(index));
 });
 
-// ------------------------------------💅Build PRODUCT GRID SECTION---------------------------------
+// ------------------------------------💅BUILD PRODUCT GRID SECTION---------------------------------
 //1. I'm using array of objects for products:
 const nailProducts = [
   {
@@ -113,46 +111,70 @@ const nailProducts = [
 ];
 console.log("Product Array ready (confirms data is loaded):", nailProducts);
 
-//2.------------- Render Grid Section from Array of Objects (products)-------------------
-const productGrid = document.getElementById("productGrid");
-console.log("Got productGrid container (target div):", productGrid);
+// ---------------------------------------BUILD SHOPPING BAG in reusable function----------------------------------------------
+let shoppingBag = []; //empty until user clicks add-to-bag
 
-//----------------------------Function to render the products-------------------------------
-// function renderProducts() {console.log("starting to render my product cards:")
-// renderProducts();}
+function addToBag(product) {
+  shoppingBag.push(product); //product .push()ed into array
+  console.log("🛍️ Shopping Bag updated:", shoppingBag);
 
-//3. Loop over each product and insert/ build into HTML = .innerHTML
-// Loop over each product and insert += each product card after whats already there as raw HTML inside the grid
-// for each product (loop) in nailProducts array, using arrow function, log its name and i; index = srt @ 0
-nailProducts.forEach((product, index) => {
-  console.log(`Rendering product ${index + 1}:`, product);
+  const bagCount = document.querySelector(".bag-count"); //find element w class bag-count
+  if (bagCount) {
+    bagCount.innerText = shoppingBag.length; // (inside .bag-count) updates in real-time
+  }
+}
+// ------------------------------------💅BUILD PRODUCT GRID SECTION---------------------------------
+function renderProducts() {
+  const productGrid = document.getElementById("productGrid");
 
-  productGrid.innerHTML += `
-  <div class="product-card">
-  <img src="${product.image}" alt="${product.name}" />
-  <h3 class="product-name">${product.name}</h3>
-  <p class="price">$${product.price.toFixed(2)}</p>
-  <button class="add-to-cart-btn" data-index="${index}">Add to Cart</button>
-  </div>`;
-});
+  // Clear existing content to prevent duplicate elements
+  productGrid.innerHTML = ""; // Still needed to clear previous content
 
-//4. add event listeners to all "add-to-cart-btn"
-console.log("Start looking for all the add-to-cart-btns");
+  // Render all products using createElement
+  nailProducts.forEach((product, index) => {
+    // Create product card container
+    const productCard = document.createElement("div");
+    productCard.className = "product-card";
 
-// setTimeout if btns r not created in time 💬 Wait until after the browser has finished adding all the buttons, then run this part.
-setTimeout(() => {
-  // select all btns with class "add-to-cart-btn"
-  const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
-  console.log("Found buttons", addToCartButtons.length);
+    // Create image
+    const img = document.createElement("img");
+    img.src = product.image;
+    img.alt = product.name;
 
-  // Loop through each button
-  addToCartButtons.forEach((button, index) => {
-    console.log(`setting up listener for product index ${index}`);
+    // Create product name
+    const name = document.createElement("h3");
+    name.className = "product-name";
+    name.textContent = product.name;
 
-    //👂🖱️Add a click event listener to ea btn
-    button.addEventListener("click", () => {
-      console.log(`🛒add to cart clicked for from array of products: ${nailProducts[index].name}`);
-      //💡this is where you will later add cart logic!
+    // Create price
+    const price = document.createElement("p");
+    price.className = "price";
+    price.textContent = product.price.toFixed(2);
+
+    // Create Add to Bag button
+    const button = document.createElement("button");
+    button.className = "add-to-bag-btn";
+    button.dataset.index = index;
+    button.textContent = "Add to Bag";
+
+    // Append elements to product card
+    productCard.append(img, name, price, button);
+
+    // Append product card to grid
+    productGrid.append(productCard);
+  });
+
+  // Attach event listeners to all "Add to Bag" buttons
+  const addToBagButtons = document.querySelectorAll(".add-to-bag-btn");
+  addToBagButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const index = event.target.dataset.index;
+      const product = nailProducts[index];
+      console.log(`Clicked: ${product.name}`);
+      addToBag(product);
     });
   });
-}, 0);
+}
+
+// Call once DOM is ready
+renderProducts();
