@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8" /><!-- ensures proper character encoding and mobile responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Shop</title>
@@ -24,7 +24,7 @@
       <h1 id="title">FabNails.Inc</h1>
     </div>
 
-<!-------------------------------------SEARCH LOGIN SHOPPING BAG------------------------------------------->
+<!-------------------------------------SEARCH 🔍LOGIN 👤 SHOPPING BAG 🛍️------------------------------------------->
     <div id="header-right-container">
       <div class="search-bar">
         <span class="material-icons">search</span>
@@ -35,31 +35,27 @@
         <span class="material-icons">person</span>
       </button>
 
-      <button class="shopping-bag-btn" title="shopping-bag">
+      <button class="shopping-bag-btn" title="shopping-bag"> 
         <span class="material-icons">shopping_bag</span>
-        <span class="shopping-bag-count">0</span>
+        <span class="bag-count">0</span>
       </button>
     </div>
     </header>
 
-<!-- ------------------------------------------------NAV BAR  ---------------------------------------------------------->
-<div>
+<!-- ------------------------------------------------NAV BAR---------------------------------------------------------->
     <nav id="nav-bar">
       <ul>
         <li class="btn nav-link"><a href="home.html">Home</a></li>
         <li class="btn nav-link"><a href="shop.html">Shop All</a></li>
-        <li class="btn nav-link"><a href="new">New</a></li>
-        <li class="btn nav-link"><a href="services">Services</a></li>
-        <li class="btn nav-link"><a href="blog">Blog</a></li>
+        <li class="btn nav-link"><a href="new.html">New</a></li>
+        <li class="btn nav-link"><a href="services.html">Services</a></li>
+        <li class="btn nav-link"><a href="blog.html">Blog</a></li>
       </ul>
       <!-- ul by default display bullets; assign list-style in css -->
     </nav>
-  </div>
-
-
-    <!---------------------- -----------------🎠Product Carousel / Gallery  -------------------------------------------------------->
+    <!---------------------- -----------------🎠BUILD PRODUCT CAROUSEL-------------------------------------------------------->
     <div class="product-carousel-container">
-      <h1>New For You</h1>
+      <h1>New For You!</h1>
       <div class="selected-image-container">
         <button class="arrow" id="left-arrow">&lt;</button>
         <img
@@ -101,27 +97,18 @@
         <img 
         class="thumbnail" 
         src="./Images/glitter.jpeg" 
-        alt="OPI image 6_gLITter"/>
+        alt="OPI image 6_glitter"/>
     </div>
-<hr>
-
-
+<hr><!--horizontal line-->
 <!----------------------------------PRODUCT GRID SECTION------------------------------------------------------ -->
 <section class="product-grid-section">
-  <h2>Buy From What's New</h2>
+  <h2>Shop What's New</h2>
 <div class="product-grid" id="productGrid"></div><!-- store productGrid in JS / .getElementbyId  -->
 </section>   
-    
-    
-    <hr />
-    <!--------------------------------horizontal line----------------------------------------------------------------
-   
-   
-    <-------------------------Email Contact Form LINK in footer------------------------------------------------>
-    <footer>
-      <p><a href="contact.html">Contact Us</a></p>
-
-
+<!------------------------------------------------------------------------------------------------------>
+<hr /><!--horizontal line-->
+<footer>
+      <p><a href="contact.html">Contact Us</a></p><!-- Email Contact Form LINK in footer -->
       <p>© Copyright 2025 Estelle Tolmay. All rights reserved.</p>
     </footer>
   </body>
