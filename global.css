@@ -2,6 +2,17 @@
     box-sizing: border-box;
 }
 
+.page-wrapper {
+    max-width: 2000px;
+    /* Controls how wide content is */
+    margin: 0 auto;
+    /* Centers the container */
+    padding: 0 20px;
+    /*adds space on mobile too */
+    background-color: white;
+    /* Optional: white background for central content */
+}
+
 body {
     margin: 0;
     font-family: Helvetica, Arial, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
