@@ -88,3 +88,8 @@
     margin-top: 0.5rem;
     cursor: pointer;
 }
+
+.add-to-bag-btn:hover {
+    box-shadow: 0 0 15px #896279;
+    /* Glowing shadow */
+}
