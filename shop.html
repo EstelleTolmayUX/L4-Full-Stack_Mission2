@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" /><!-- ensures proper character encoding and mobile responsiveness -->
+    <meta charset="UTF-8" />
+    <!-- ensures proper character encoding and mobile responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Shop</title>
@@ -11,106 +12,90 @@
     <link rel="stylesheet" href="home.css" />
     <link rel="stylesheet" href="contactuspage.css" />
     <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <script defer src="script.js"></script>
-  </head>     
-  <div class="page-wrapper">
+  </head>
+
   <body>
-    <header>
-      <div id="header-left-container">
-        <!-- -----------------placeholder for logo ------------------------------------------------------>
-    </div>
+    <div class="page-wrapper">
+      <header>
+        <div id="header-left-container">
+          <!-- -----------------placeholder for logo ------------------------------------------------------>
+        </div>
 
-    <div id="header-center-container">
-      <h1 id="title">FabNails.Inc</h1>
-    </div>
+        <div id="header-center-container">
+          <h1 id="title">FabNails.Inc</h1>
+        </div>
 
-<!-------------------------------------SEARCH 🔍LOGIN 👤 SHOPPING BAG 🛍️------------------------------------------->
-    <div id="header-right-container">
-      <div class="search-bar">
-        <span class="material-icons">search</span>
-        <input type="text" placeholder="What are you looking for?" />
+        <!-------------------------------------SEARCH 🔍LOGIN 👤 SHOPPING BAG 🛍️------------------------------------------->
+        <div id="header-right-container">
+          <div class="search-bar">
+            <span class="material-icons">search</span>
+            <input type="text" placeholder="What are you looking for?" />
+          </div>
+
+          <button class="login-btn" title="Login">
+            <span class="material-icons">person</span>
+          </button>
+
+          <button class="shopping-bag-btn" title="shopping-bag">
+            <span class="material-icons">shopping_bag</span>
+            <span class="bag-count">0</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- ------------------------------------------------NAV BAR---------------------------------------------------------->
+      <nav id="nav-bar">
+        <ul>
+          <li class="btn nav-link"><a href="home.html">Home</a></li>
+          <li class="btn nav-link"><a href="shop.html">Shop All</a></li>
+          <li class="btn nav-link"><a href="new.html">New</a></li>
+          <li class="btn nav-link"><a href="services.html">Services</a></li>
+          <li class="btn nav-link"><a href="blog.html">Blog</a></li>
+        </ul>
+        <!-- ul by default display bullets; assign list-style in css -->
+      </nav>
+      <!---------------------- -----------------🎠BUILD PRODUCT CAROUSEL-------------------------------------------------------->
+      <div class="product-carousel-container">
+        <h1>New For You!</h1>
+        <div class="selected-image-container">
+          <button class="arrow" id="left-arrow">&lt;</button>
+          <img id="selected-image" src="./Images/shes-a-bad-muffuletta.jpeg" alt="selected nail polish" />
+          <button class="arrow" id="right-arrow">&gt;</button>
+          <!-- &lt &gt are literal symbols representing nav arrows; best practice use &lt; and &gt; to avoid potential rendering issues. -->
+        </div>
+
+        <p id="image-name">She's a Bad Muffuletta!</p>
+        <div class="thumbnail-container">
+          <img class="thumbnail" src="./Images/shes-a-bad-muffuletta.jpeg" alt="OPI image 1" />
+          <img class="thumbnail" src="./Images/prideful_peach.jpeg" alt="OPI image 2" />
+          <img class="thumbnail" src="./Images/suzis_pedicure_throne.jpeg" alt="OPI image 3" />
+          <img class="thumbnail" src="./Images/vogue_en_violet.jpeg" alt="OPI image 4" />
+          <img class="thumbnail" src="./Images/indigo_off.jpeg" alt="OPI image 5" />
+          <img class="thumbnail" src="./Images/glitter.jpeg" alt="OPI image 6_glitter" />
+        </div>
       </div>
+      <hr />
+      <!--horizontal line-->
 
-      <button class="login-btn" title="Login">
-        <span class="material-icons">person</span>
-      </button>
+      <!----------------------------------PRODUCT GRID SECTION ON SHOP.html using .createElement Method------------------------------------------------->
 
-      <button class="shopping-bag-btn" title="shopping-bag"> 
-        <span class="material-icons">shopping_bag</span>
-        <span class="bag-count">0</span>
-      </button>
+      <section class="product-grid-section">
+        <h2>Shop What's New</h2>
+        <p>(using .createElement method)</p>
+        <div class="product-grid" id="productGrid"></div>
+        <!-- store productGrid in JS / .getElementbyId  -->
+      </section>
+
+      <!-------------------------------------------------------------------------------------------------------------------------------------------------->
+      <hr />
+      <!--horizontal line-->
     </div>
-    </header>
 
-<!-- ------------------------------------------------NAV BAR---------------------------------------------------------->
-    <nav id="nav-bar">
-      <ul>
-        <li class="btn nav-link"><a href="home.html">Home</a></li>
-        <li class="btn nav-link"><a href="shop.html">Shop All</a></li>
-        <li class="btn nav-link"><a href="new.html">New</a></li>
-        <li class="btn nav-link"><a href="services.html">Services</a></li>
-        <li class="btn nav-link"><a href="blog.html">Blog</a></li>
-      </ul>
-      <!-- ul by default display bullets; assign list-style in css -->
-    </nav>
-    <!---------------------- -----------------🎠BUILD PRODUCT CAROUSEL-------------------------------------------------------->
-    <div class="product-carousel-container">
-      <h1>New For You!</h1>
-      <div class="selected-image-container">
-        <button class="arrow" id="left-arrow">&lt;</button>
-        <img
-          id="selected-image"
-          src="./Images/shes-a-bad-muffuletta.jpeg"
-          alt="selected nail polish"
-        />
-        <button class="arrow" id="right-arrow">&gt;</button>
-        <!-- &lt &gt are literal symbols representing nav arrows; best practice use &lt; and &gt; to avoid potential rendering issues. -->
-      </div>
-
-      <p id="image-name">She's a Bad Muffuletta!</p>
-      <div class="thumbnail-container">
-        <img
-          class="thumbnail"
-          src="./Images/shes-a-bad-muffuletta.jpeg"
-          alt="OPI image 1"
-        />
-        <img
-          class="thumbnail"
-          src="./Images/prideful_peach.jpeg"
-          alt="OPI image 2"
-        />
-        <img
-          class="thumbnail"
-          src="./Images/suzis_pedicure_throne.jpeg"
-          alt="OPI image 3"
-        />
-        <img
-          class="thumbnail"
-          src="./Images/vogue_en_violet.jpeg"
-          alt="OPI image 4"
-        />
-        <img
-          class="thumbnail"
-          src="./Images/indigo_off.jpeg"
-          alt="OPI image 5"
-        />
-        <img 
-        class="thumbnail" 
-        src="./Images/glitter.jpeg" 
-        alt="OPI image 6_glitter"/>
-    </div>
-<hr><!--horizontal line-->
-<!----------------------------------PRODUCT GRID SECTION------------------------------------------------------ -->
-<section class="product-grid-section">
-  <h2>Shop What's New</h2>
-<div class="product-grid" id="productGrid"></div><!-- store productGrid in JS / .getElementbyId  -->
-</section>   
-<!------------------------------------------------------------------------------------------------------>
-<hr /><!--horizontal line-->
-</div>
-<footer>
-      <p><a href="contact.html">Contact Us</a></p><!-- Email Contact Form LINK in footer -->
+    <footer>
+      <p><a href="contact.html">Contact Us</a></p>
+      <!-- Email Contact Form LINK in footer -->
       <p>© Copyright 2025 Estelle Tolmay. All rights reserved.</p>
     </footer>
   </body>
