@@ -1,5 +1,58 @@
 console.log("🚀It's Mission 2 Time");
 
+//------------------------------HOMEPAGE TRENDING PRODUCTS-----------------------------------------------------------------------------------------------------------------------------------------
+// innerHTML Example (Trending Products):
+const trendingProducts = [
+  {
+    name: "Supercute Color",
+    price: 12.99,
+    image: "./Images/supercute_color_trending1.jpeg",
+    description: `A semi-sheer lavender shimmer gel nail polish that’s cuteness overload.`,
+  },
+
+  {
+    name: "Supercute Bows",
+    price: 10.99,
+    image: "./Images/supercute-bows_trending2.jpeg",
+    description: `Flex your linework with this bow-tiful gel design.`,
+  },
+
+  {
+    name: "Within Peach",
+    price: 16.99,
+    image: "./Images/within_peach_trending3.jpeg",
+    description: `A ripe orange nail polish with a juicy shine. Isn't it a peach?`,
+  },
+];
+
+//Render trending section using innerHTML
+function renderTrendingProducts() {
+  const trendingGrid = document.getElementById("trendingGrid");
+  if (!trendingGrid) return; //wrap function call in a check bcz there is no <div id="trendingGrid"> in shop.html. so throwing errors
+
+  trendingGrid.innerHTML = ""; // clear before re-render
+
+  trendingProducts.forEach((product) => {
+    trendingGrid.innerHTML += ` 
+    <div class="product-card">
+    <img src="${product.image}" alt="${product.name}" />
+        <h3 class="product-name">${product.name}</h3>
+        <p class="price">$${product.price.toFixed(2)}</p>
+        <p class="description">${product.description}</p>
+      </div>
+    `;
+  });
+}
+
+//call function
+renderTrendingProducts();
+
+// Notes - My Learning:
+// Every time you update innerHTML, it re-renders the entire DOM, which means:
+// You lose any attached event listeners
+// You can’t easily update just one product or element
+// It gets messy to manage the shoppingBag array
+
 // ---------------- -----------------🎠BUILD PRODUCT CAROUSEL-------------------------------------------------------->
 const images = [
   { src: "./Images/shes-a-bad-muffuletta.jpeg", name: "She's a Bad Muffuletta!" },
@@ -57,15 +110,14 @@ function selectThumbnail(index) {
   updateGallery(); // call updateGallery
 }
 
-//*Fix: Add checks (if) before adding event listeners:
+//Fix: Add checks (if) before adding event listeners:
 if (leftArrow && rightArrow && selectedImage && imageName) {
   leftArrow.addEventListener("click", prevImage); // add functions to elements by adding event listeners or directly in the html
   rightArrow.addEventListener("click", nextImage);
   thumbnails.forEach((thumbnail, index) => {
     thumbnail.addEventListener("click", () => selectThumbnail(index));
   });
-  //*After event listeners for arrows and thumbnails call updateGallery
-  updateGallery();
+  updateGallery(); //After event listeners for arrows and thumbnails call updateGallery
 }
 // ------------------------------------💅BUILD PRODUCT GRID SECTION---------------------------------//
 //1. I'm using array of objects for products:
@@ -82,13 +134,6 @@ const nailProducts = [
     price: 11.49,
     image: "./Images/prideful_peach.jpeg",
     description: "Soft peachy nude for everyday glow.",
-  },
-
-  {
-    name: "Suzi's Pedicure Throne",
-    price: 13.99,
-    image: "./Images/suzis_pedicure_throne.jpeg",
-    description: "Royal purple shimmer for bold style.",
   },
 
   {
@@ -111,21 +156,30 @@ const nailProducts = [
     image: "./Images/glitter.jpeg",
     description: "Soft peachy nude for everyday glow.",
   },
+
+  {
+    name: "Supercute Color",
+    price: 12.99,
+    image: "./Images/supercute_color_trending1.jpeg",
+    description: `A semi-sheer lavender shimmer gel nail polish that’s cuteness overload.`,
+  },
+
+  {
+    name: "Within Peach",
+    price: 16.99,
+    image: "./Images/within_peach_trending3.jpeg",
+    description: `A ripe orange nail polish with a juicy shine. Isn't it a peach?`,
+  },
+
+  {
+    name: "Suzi's Pedicure Throne",
+    price: 13.99,
+    image: "./Images/suzis_pedicure_throne.jpeg",
+    description: "Royal purple shimmer for bold style.",
+  },
 ];
 console.log("Product Array ready (confirms data is loaded):", nailProducts);
 
-// ------------------------------------BUILD SHOPPING BAG in reusable function----------------------------------//
-let shoppingBag = []; //empty until user clicks add-to-bag
-
-function addToBag(product) {
-  shoppingBag.push(product); //product .push()ed into array
-  console.log("🛍️ Shopping Bag updated:", shoppingBag);
-
-  const bagCount = document.querySelector(".bag-count"); //*querySelector: find element w class bag-count
-  if (bagCount) {
-    bagCount.innerText = shoppingBag.length; // (inside .bag-count) updates in real-time
-  }
-}
 // ------------------------------------💅BUILD PRODUCT GRID SECTION WITH PRODUCT CARDS ------------------------------------//
 function renderProducts() {
   const productGrid = document.getElementById("productGrid"); //*getElementById: find the grid container on the page where all your product cards will go.
@@ -154,7 +208,7 @@ function renderProducts() {
     // Create price
     const price = document.createElement("p");
     price.className = "price";
-    price.textContent = product.price.toFixed(2); //textContent Sets the visible text inside a tag
+    price.textContent = `$${product.price.toFixed(2)}`; //textContent sets visible text inside a tag;wrap in Template Literals
 
     // Create Add to Bag button
     const button = document.createElement("button");
@@ -189,49 +243,36 @@ function renderProducts() {
 // Call function right away so the grid loads when the page opens
 renderProducts();
 
-//-----------------------------------------------HOMEPAGE TRENDING PRODUCTS-----------------------------------------------------------------------------------------------------------------------------------------
-// innerHTML Example (Trending Products):
-const trendingProducts = [
-  {
-    name: "Supercute Color",
-    price: 12.99,
-    image: "./Images/supercute_color_trending1.jpeg",
-    description: `A semi-sheer lavender shimmer gel nail polish that’s cuteness overload.`,
-  },
+// -----------------------------BUILD SHOPPING BAG in reusable function----------------------------------//
+let shoppingBag = []; //empty until user clicks add-to-bag
 
-  {
-    name: "Supercute Bows",
-    price: 10.99,
-    image: "./Images/supercute-bows_trending2.jpeg",
-    description: `Flex your linework with this bow-tiful gel design..`,
-  },
+function addToBag(product) {
+  shoppingBag.push(product); //product .push()ed into array
+  console.log("🛍️ Shopping Bag updated:", shoppingBag);
 
-  {
-    name: "Within Peach",
-    price: 16.99,
-    image: "./Images/within_peach_trending3.jpeg",
-    description: `A ripe orange nail polish with a juicy shine. Isn't it a peach?`,
-  },
-];
+  const bagCount = document.querySelector(".bag-count"); //querySelector: find element w class bag-count
+  if (bagCount) {
+    bagCount.innerText = shoppingBag.length; // (inside .bag-count) updates in real-time
+  }
+}
+//-------------------------------SHOW SHOPPING BAG -------------------------------------------//
+function showShoppingBag() {
+  const panel = document.getElementById("shoppingBagPanel");
+  const list = document.getElementById("shoppingBagList");
 
-//Render trending section using innerHTML
-function renderTrendingProducts() {
-  const trendingGrid = document.getElementById("trendingGrid");
-  if (!trendingGrid) return; //wrap function call in a check bcz there is no <div id="trendingGrid"> in shop.html. so throwing errors
+  // Toggle visibility
+  panel.style.display = panel.style.display === "none" ? "block" : "none";
 
-  trendingGrid.innerHTML = ""; // clear before re-render
+  // Clear previous content
+  list.innerHTML = "";
 
-  trendingProducts.forEach((product) => {
-    trendingGrid.innerHTML += ` 
-    <div class="product-card">
-    <img src="${product.image}" alt="${product.name}" />
-        <h3 class="product-name">${product.name}</h3>
-        <p class="price">$${product.price.toFixed(2)}</p>
-        <p class="description">${product.description}</p>
-      </div>
-    `;
+  // Re-render shopping bag items
+  shoppingBag.forEach((item, index) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+    list.appendChild(listItem);
   });
 }
-
-//call function
-renderTrendingProducts();
+// Add click event to your shopping bag icon:
+const bagBtn = document.querySelector(".shopping-bag-btn");
+bagBtn.addEventListener("click", showShoppingBag);
