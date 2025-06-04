@@ -28,6 +28,7 @@ const trendingProducts = [
 //Render trending section using innerHTML
 function renderTrendingProducts() {
   const trendingGrid = document.getElementById("trendingGrid");
+
   if (!trendingGrid) return; //wrap function call in a check bcz there is no <div id="trendingGrid"> in shop.html. so throwing errors
 
   trendingGrid.innerHTML = ""; // clear before re-render
@@ -53,7 +54,7 @@ renderTrendingProducts();
 // You can’t easily update just one product or element
 // It gets messy to manage the shoppingBag array
 
-// ---------------- -----------------🎠BUILD PRODUCT CAROUSEL-------------------------------------------------------->
+// ---------------------------------🎠BUILD PRODUCT CAROUSEL-------------------------------------------------------->
 const images = [
   { src: "./Images/shes-a-bad-muffuletta.jpeg", name: "She's a Bad Muffuletta!" },
   { src: "./Images/prideful_peach.jpeg", name: "Prideful Peach" },
@@ -114,6 +115,8 @@ function selectThumbnail(index) {
 if (leftArrow && rightArrow && selectedImage && imageName) {
   leftArrow.addEventListener("click", prevImage); // add functions to elements by adding event listeners or directly in the html
   rightArrow.addEventListener("click", nextImage);
+
+  //forEach LOOP
   thumbnails.forEach((thumbnail, index) => {
     thumbnail.addEventListener("click", () => selectThumbnail(index));
   });
@@ -180,9 +183,10 @@ const nailProducts = [
 ];
 console.log("Product Array ready (confirms data is loaded):", nailProducts);
 
-// ------------------------------------💅BUILD PRODUCT GRID SECTION WITH PRODUCT CARDS ------------------------------------//
+// ---------------------------💅BUILD PRODUCT GRID SECTION WITH PRODUCT CARDS ------------------------------------//
 function renderProducts() {
   const productGrid = document.getElementById("productGrid"); //*getElementById: find the grid container on the page where all your product cards will go.
+
   if (!productGrid) return; // RUN THIS CHECK
   // Clear existing content to prevent duplicate elements
   productGrid.innerHTML = ""; // Still needed to clear previous content
